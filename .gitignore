@@ -1,23 +1,33 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# dependencies
-/node_modules
+# VS generated files
+.vscode/*
 /.pnp
 .pnp.js
+
+# Node Modules
+/node_modules
+
+# Local production build
+/build
+
+# Distribution
+/dist
 
 # testing
 /coverage
 
-# production
-/build
+# Environment variables
+.env
+.env.*
 
-# misc
+# Logs
+*.log
+*.log*
+
+# Development Files
+package-lock.json
+
+# Misc
 .DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
 
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
