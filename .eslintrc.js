@@ -37,7 +37,7 @@ module.exports = {
     "react/jsx-one-expression-per-line": OFF,
     "react/jsx-filename-extension": [WARN, { extensions: [".js", ".jsx"] }],
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-closing-bracket-location.md
-    "react/jsx-closing-bracket-location": [WARN, { nonEmpty: "after-props", selfClosing: "after-props" }],
+    "react/jsx-closing-bracket-location": [OFF, { nonEmpty: "after-props", selfClosing: "after-props" }],
     // WARNING: the rules below need to be shut OFF because they conflict with "plugin:prettier".
     "react/jsx-closing-tag-location": OFF,
     "react/jsx-curly-spacing": OFF,
