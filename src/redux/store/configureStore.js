@@ -6,7 +6,7 @@ import rootReducer from "../reducers";
 
 export default function configureState(initialState) {
   const middleWares =
-    process.env.NODE_ENV != "production"
+    process.env.NODE_ENV !== "production"
       ? [logger, reduxImmutableStateInvariant(), thunk]
       : [thunk]
 

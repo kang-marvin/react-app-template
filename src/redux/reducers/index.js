@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 // API Status Reducer
-import apiStatus from "./apiStausReducer";
+import apiStatus from "./apiStatusReducer";
 
 const rootReducer = combineReducers({
   apiStatus
