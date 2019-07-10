@@ -4,8 +4,12 @@ import { Provider } from "react-redux";
 import { BrowserRouter as Router } from "react-router-dom";
 
 import * as serviceWorker from "./tools/serviceWorker";
+
 import { initialState } from "./data/initialState";
+
 import configureStore from "./redux/store/configureStore";
+
+import { saveState } from "./utils/localStorageUtils";
 
 /** Import CDN css files here */
 
@@ -13,6 +17,13 @@ import routes from "./routes";
 import "./styles/index.css";
 
 const store = configureStore(initialState);
+
+store.subscribe(() => {
+  saveState({
+    /** Save authentication to localStorage */
+    authentication: store.getState().authentication
+  })
+});
 
 ReactDOM.render(
   <Provider store={store}>
