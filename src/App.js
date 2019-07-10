@@ -1,27 +1,28 @@
 import React from "react";
-import logo from "./images/logo.svg";
+import PropTypes from "prop-types";
+import { BrowserRouter } from "react-router-dom";
 
-import "./styles/App.css";
+require("dotenv").config();
 
-function App() {
+function App(props) {
+
+  const { children } = props;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="sticky-top">
+        <p>Header</p>
+      </div>
+      <div className="container-fluid">
+        {children}
+      </div>
+      <p>Footer</p>
+    </BrowserRouter>
   );
 }
+
+App.propTypes = {
+  children: PropTypes.object.isRequired
+};
 
 export default App;
