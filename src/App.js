@@ -10,13 +10,15 @@ function App(props) {
 
   return (
     <BrowserRouter>
-      <div className="sticky-top">
-        <p>Header</p>
+      <div>
+        <div className="sticky-top">
+          <p>Header</p>
+        </div>
+        <div className="container-fluid">
+          {children}
+        </div>
+        <p>Footer</p>
       </div>
-      <div className="container-fluid">
-        {children}
-      </div>
-      <p>Footer</p>
     </BrowserRouter>
   );
 }
