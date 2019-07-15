@@ -1,6 +1,6 @@
 export const initialState = {
   /** Api Status */
-  status: {
+  apiStatus: {
     message: ""
   }
 };

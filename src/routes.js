@@ -30,13 +30,13 @@ const routes = state => {
         {/* PrivateRoutes */}
         <PrivateRoute
           exact
-          path="path"
+          path="/private"
           component={PrivateComponent}
         />
         {/* PublicRoutes */}
         <Route
           exact
-          path="path"
+          path="/public"
           component={PublicComponent}
         />
         {/* Error Handling Routes */}
