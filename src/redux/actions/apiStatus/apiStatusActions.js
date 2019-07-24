@@ -4,29 +4,31 @@ import { statusApi } from "../../../api";
 
 /** Redux Actions */
 
-export function apiStatusSuccess(status) {
-  return { type: types.API_STATUS_SUCCESS, status }
+export const apiStatusSuccess = statusObject => {
+  return { type: types.API_STATUS_SUCCESS, statusObject }
 }
 
-export function apiStatusFailure() {
+export const apiStatusFailure = _ => {
   return { type: types.API_STATUS_FAILURE }
 }
 
 /** API calls */
 
-export function apiStatus() {
-  return function(dispatch) {
-    return statusApi
-      .getEndpointStatus()
-      .then(response => {
-        if (response.status === 200) {
-          dispatch(apiStatusSuccess(response.data));
-        } else {
-          dispatch(apiStatusFailure());
-        }
-      })
-      .catch(error => {
-        throw error;
-      });
-  };
+/**
+ * Replace undescore (_) with params if the function takes in arguments.
+ */
+
+export const apiStatus = _ => (dispatch) => {
+  return statusApi
+    .getEndpointStatus()
+    .then(response => {
+      if (response.status === 200) {
+        dispatch(apiStatusSuccess(response.data));
+      } else {
+        dispatch(apiStatusFailure());
+      }
+    })
+    .catch(_error => {
+      dispatch(apiStatusFailure());
+    });
 }
