@@ -8,7 +8,7 @@ import authorizationUtils from "./utils/authorizationUtils";
 /** Import containers here */
 import ErrorComponent from "./containers/errors/ErrorComponent";
 import PublicComponent from "./containers/guests/PublicComponent";
-import PrivateComponent from "./containers/users/PrivateComponent";
+import APIStatus from "./containers/users/APIStatus";
 
 const routes = state => {
   /* https://tylermcginnis.com/react-router-protected-routes-authentication/ */
@@ -30,8 +30,8 @@ const routes = state => {
         {/* PrivateRoutes */}
         <PrivateRoute
           exact
-          path="/private"
-          component={PrivateComponent}
+          path="/status"
+          component={APIStatus}
         />
         {/* PublicRoutes */}
         <Route
