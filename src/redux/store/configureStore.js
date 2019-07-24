@@ -5,16 +5,23 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import { logger } from "redux-logger";
 import rootReducer from "../reducers";
 
+/**
+ * Docs for Redux devtools is
+ *  [here](https://github.com/zalmoxisus/redux-devtools-extension#usage)
+ */
+
 export default function configureState(initialState) {
   const middleWares =
     process.env.NODE_ENV !== "production"
-      ? [logger, reduxImmutableStateInvariant(), composeWithDevTools, thunk]
+      ? [logger, reduxImmutableStateInvariant(), thunk]
       : [thunk]
 
 
   return createStore(
     rootReducer,
     initialState,
-    applyMiddleware(...middleWares)
+    composeWithDevTools(
+      applyMiddleware(...middleWares)
+    )
   );
 }
