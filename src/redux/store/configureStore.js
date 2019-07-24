@@ -10,7 +10,7 @@ import rootReducer from "../reducers";
  *  [here](https://github.com/zalmoxisus/redux-devtools-extension#usage)
  */
 
-export default function configureState(initialState) {
+const configureState = initialState => {
   const middleWares =
     process.env.NODE_ENV !== "production"
       ? [logger, reduxImmutableStateInvariant(), thunk]
@@ -25,3 +25,5 @@ export default function configureState(initialState) {
     )
   );
 }
+
+export default configureState;

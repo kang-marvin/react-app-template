@@ -3,7 +3,7 @@ import { initialState } from "../../data/initialState";
 
 const initialAPIStatusState = initialState.apiStatus;
 
-export default function apiStatusRedcuer(state = initialAPIStatusState, action) {
+const apiStatusRedcuer = (state = initialAPIStatusState, action) => {
   switch (action.type) {
     case types.API_STATUS_SUCCESS:
       return Object.assign({}, state, {
@@ -19,3 +19,5 @@ export default function apiStatusRedcuer(state = initialAPIStatusState, action) 
       return state;
   }
 }
+
+export default  apiStatusRedcuer;

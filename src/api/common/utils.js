@@ -1,4 +1,4 @@
-export default function URL(path) {
+const URL = path => {
   switch (process.env.REACT_APP_NODE_ENV) {
     case "development":
       return `${process.env.DEV_APP_BACKEND_URL}/${path}`;
@@ -12,3 +12,5 @@ export default function URL(path) {
       return `${process.env.STAG_APP_BACKEND_URL}/${path}`;
   }
 }
+
+export default URL;

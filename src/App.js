@@ -4,7 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 
 require("dotenv").config();
 
-function App(props) {
+const App = props => {
 
   const { children } = props;
 
