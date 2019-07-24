@@ -6,6 +6,8 @@ export default function URL(path) {
         return `${process.env.PROD_APP_BACKEND_URL}/${path}`;
     case "staging":
       return `${process.env.STAG_APP_BACKEND_URL}/${path}`;
+    case "qa":
+      return `${process.env.QA_APP_BACKEND_URL}/${path}`;
     default:
       return `${process.env.STAG_APP_BACKEND_URL}/${path}`;
   }
