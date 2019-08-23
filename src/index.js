@@ -12,6 +12,8 @@ import configureStore from "./redux/store/configureStore";
 import { saveState } from "./utils/localStorageUtils";
 
 /** Import CDN css files here */
+import "semantic-ui-css/semantic.min.css";
+import "mdbreact/dist/css/mdb.css";
 
 import routes from "./routes";
 import "./styles/index.css";
