@@ -39,6 +39,11 @@ const routes = state => {
           path="/public"
           component={PublicComponent}
         />
+        {/* Root Path */}
+        <Route
+          exact
+          path="/"
+          component={PublicComponent} />
         {/* Error Handling Routes */}
         <Route
           component={ErrorComponent}

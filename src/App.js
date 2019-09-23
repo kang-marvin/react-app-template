@@ -12,12 +12,14 @@ const App = props => {
     <BrowserRouter>
       <div>
         <div className="sticky-top">
-          <p>Header</p>
+          {/* Add Header Component here */}
+          <p>Header Component</p>
         </div>
         <div className="container-fluid">
           {children}
         </div>
-        <p>Footer</p>
+        {/* Add Footer Component here  */}
+        <p>Footer Component</p>
       </div>
     </BrowserRouter>
   );
